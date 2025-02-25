@@ -6,13 +6,13 @@ import User from "@/models/User";
 import React from "react";
 import Razorpay from "razorpay"
 
+
+
 export const initiate=async (amount, to_username , paymentform)=>{
   const user1=await User.findOne({username:to_username})
-  // user1=JSON.parse(user1)
-  console.log("type of user1 is ",typeof user1)
   var instance = new Razorpay({
-    key_id: await user1?.RazorpayId,
-    key_secret:await user1?.RazorpaySecreat
+    key_id: await user1.RazorpayId,
+    key_secret:await user1.RazorpaySecreat
   })
   
   await connectDb()
@@ -30,7 +30,6 @@ export const initiate=async (amount, to_username , paymentform)=>{
     })
     
     
-  console.log("to_username is ",to_username)
     return x
 }
 

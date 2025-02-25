@@ -10,9 +10,8 @@ const Navbar = () => {
   return (
     <div className="flex justify-between p-1  h-13  bg-gray-900 text-white items-center">
       <Link href={"/"}>
-        <div className="logo flex items-center">
-          <img src="/tea.gif" className="w-10 h-10 " alt="" />
-          <div className="logo font-bold text-xl ">GetMeAChai!</div>
+        <div className="logo flex items-center ml-5">
+          <div className="logo font-bold text-xl ">Fan Fund!</div>
         </div>
       </Link>
       <div className="relative ">

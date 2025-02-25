@@ -1,13 +1,14 @@
 import PaymentPage from "@/components/PaymentPage";
-
 import { notFound } from "next/navigation";
 import User from "@/models/User";
 import { getData2 } from "@/actions/dashboardAction";
 import Head from "next/head";
 
-export async function generateMetadata({ params }) {
-  const dupdetails = await getData2(params.username);
 
+
+export async function generateMetadata({ params }) {
+
+  const dupdetails = await getData2(params.username);
   if (!dupdetails[0]) {
     return {
       title: "User Not Found",
@@ -15,14 +16,20 @@ export async function generateMetadata({ params }) {
     };
   }
 
+
   return {
     title: dupdetails[0].username || "User Profile",
     description: dupdetails[0].bio || "User profile page",
+    
   };
+
   
 }
 
+
+
 const Profile =  async ({ params }) => {
+
   const dupdetails=await getData2(params.username)
   if (dupdetails[0]==null){
     return notFound() 
@@ -38,5 +45,7 @@ const Profile =  async ({ params }) => {
     </>
   );
 };
+
+
 
 export default Profile;

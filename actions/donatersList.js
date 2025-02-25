@@ -5,10 +5,12 @@ import Payment from "@/models/Payment";
 import User from "@/models/User";
 import React from "react";
 
+
+
+// for fetching donators
 export const donators=async (username)=>{
     await connectDb()
     const donators=await Payment.find({to_user:username,done:true})
-    console.log(donators)
     return donators
 }
 
