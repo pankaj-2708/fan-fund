@@ -11,7 +11,6 @@ import { DashboardAction } from "@/actions/dashboardAction";
 import { getData } from "@/actions/dashboardAction";
 
 const Dashboard = () => {
-  document.title = "Dashboard";
   const {
     register,
     handleSubmit,
